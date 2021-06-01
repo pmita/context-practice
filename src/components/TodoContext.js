@@ -4,28 +4,32 @@ import React, {useState, createContext} from 'react';
 export const TodoContext = createContext();
 
 //Let's create out context api provider
-export const TodoProvider = () => {
+export const TodoProvider = (props) => {
     //Let's set our global state
     const [allTodos, setAllTodos] = useState([
         {
             task: 'Practice react',
-            isCompleted: true
+            isCompleted: true,
+            id: 0
         },
         {
             task: 'Connect on LinkedIn',
-            isCompleted: true
+            isCompleted: true,
+            id: 1
         },
         {
             task: 'Work out',
-            isCompleted: false
+            isCompleted: false,
+            id: 2
         },
         {
-            task: 'Stick to macrod',
-            isCompleted: false
+            task: 'Stick to macros',
+            isCompleted: false,
+            id: 3
         },
     ])
     return(
-        <TodoContext.Provider testValue='This is a test'>
+        <TodoContext.Provider value={[allTodos, setAllTodos]}>
             {props.children}
         </TodoContext.Provider>
     );
