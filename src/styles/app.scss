@@ -1,0 +1,10 @@
+//Variables
+$main: red;
+$sec: green;
+
+.App {
+  min-height: 100vh;
+  width: 100vw;
+  background: pink;
+}
+@import "global";
